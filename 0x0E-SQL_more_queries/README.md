@@ -1,4 +1,4 @@
-0x0E. SQL - More queries 
+0x0E. iQL - More queries 
 
 0.Write a script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server (in localhost).
 
@@ -10,7 +10,7 @@
 
 4.Write a script that creates the table id_not_null on your MySQL server.
 
-5.
+5.Write a script that creates the table unique_id on your MySQL server.
 
 6.
 
