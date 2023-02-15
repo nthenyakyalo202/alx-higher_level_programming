@@ -6,4 +6,4 @@
 
 2.Write a script that creates the database hbtn_0d_2 and the user user_0d_2.
 
-3.
+3Write a script that creates the table force_name on your MySQL server..
