@@ -22,7 +22,11 @@ const getCharacters = (index) => {
     return;
   }
 
+<<<<<<< HEAD
 request(characters[index], (error, response, body) => {
+=======
+  request(characters[index], (error, response, body) => {
+>>>>>>> 5efbfb37bf3c5ab02e46bea1b4c2702c149059d5
     if (error) {
       console.log(error);
       return;

@@ -9,4 +9,8 @@ fs.readFile(filename, 'utf-8', (error, content) => {
   } else {
     console.log(content);
   }
+<<<<<<< HEAD
 }
+=======
+});
+>>>>>>> 5efbfb37bf3c5ab02e46bea1b4c2702c149059d5
