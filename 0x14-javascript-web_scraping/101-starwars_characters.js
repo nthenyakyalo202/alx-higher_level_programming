@@ -1,38 +1,24 @@
 #!/usr/bin/node
 
-const request = require('request');
+import requests
+import sys
 
-const movieId = process.argv[2];
-const url = `https://swapi.dev/api/films/${movieId}/`;
-let characters = [];
+if len(sys.argv) != 2:
+    print("Usage: python script.py <Movie ID>")
+    sys.exit(1)
 
-request(url, (error, response, body) => {
-  if (error) {
-    console.log(error);
-    return;
-  }
+movie_id = sys.argv[1]
+url = f"https://swapi.dev/api/films/{movie_id}/"
+response = requests.get(url)
 
-  const data = JSON.parse(body);
-  characters = data.characters;
-  getCharacters(0);
-});
+if response.status_code != 200:
+    print(f"Error: {response.status_code} {response.reason}")
+    sys.exit(1)
 
-const getCharacters = (index) => {
-  if (index === characters.length) {
-    return;
-  }
+data = response.json()
+characters = data["characters"]
 
-<<<<<<< HEAD
-request(characters[index], (error, response, body) => {
-=======
-  request(characters[index], (error, response, body) => {
->>>>>>> 5efbfb37bf3c5ab02e46bea1b4c2702c149059d5
-    if (error) {
-      console.log(error);
-      return;
-    }
-    const characterData = JSON.parse(body);
-    console.log(characterData.name);
-    getCharacters(index + 1);
-  });
-};
+for character_url in characters:
+    response = requests.get(character_url)
+    character_data = response.json()
+    print(character_data["name"])
